@@ -467,7 +467,7 @@ function updateSelectedProduct(index) {
     const productNameField = document.getElementById('productName');
     const productImageField = document.getElementById('productImage');
     if (productNameField) productNameField.value = product.name;
-    if (productImageField) productImageField.value = product.image;
+    if (productImageField) productImageField.value = location.origin + '/lander/mancurs/' + product.image;
     
     // Заполняем UTM-параметры из URL
     const urlParams = new URLSearchParams(window.location.search);
