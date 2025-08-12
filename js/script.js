@@ -1298,6 +1298,7 @@ function openProductPage(idx) {
         if (!document.body.classList.contains('quiz-only')) {
             renderProductsGrid();
             initializeQuiz();
+            initializeForm(); // Переинициализируем форму для аналитики
         }
     };
     // Слайдер
@@ -1329,6 +1330,7 @@ function openProductPage(idx) {
     document.getElementById('quizBtn').onclick = function() {
         main.innerHTML = window._mainContent;
         renderProductsGrid();
+        initializeForm(); // Переинициализируем форму для аналитики
         window.selectedProductIndex = idx;
         updateOrderSummary(idx);
         showQuizOnly();
@@ -1381,6 +1383,7 @@ function addQuizBackButton() {
             document.querySelector('.hero').style.display = '';
             document.getElementById('products').style.display = '';
             renderProductsGrid();
+            initializeForm(); // Переинициализируем форму для аналитики
         };
         quizContainer.appendChild(backBtn);
     }
@@ -1395,6 +1398,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let idx = this.dataset.product ? parseInt(this.dataset.product) : 0;
             window.selectedProductIndex = idx;
             updateOrderSummary(idx);
+            initializeForm(); // Переинициализируем форму для аналитики
             showQuizOnly();
             addQuizBackButton();
             initializeQuiz();
